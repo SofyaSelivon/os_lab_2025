@@ -1,0 +1,16 @@
+LAB3 = ../../lab3/src
+LAB4 = .
+
+CC = gcc
+CFLAGS = -Wall -Wextra
+
+all: parallel_min_max process_memory
+
+parallel_min_max:
+	$(CC) $(CFLAGS) $(LAB3)/parallel_min_max.c $(LAB3)/find_min_max.c $(LAB3)/utils.c -o $(LAB3)/parallel_min_max
+
+process_memory:
+	$(CC) $(CFLAGS) $(LAB4)/process_memory.c -o $(LAB4)/process_memory
+
+clean:
+	rm -f $(LAB3)/parallel_min_max $(LAB4)/process_memory
